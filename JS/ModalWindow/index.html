@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ModalWindow</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="open" class="open">詳細をみる</div>
+
+    <div id="mask" class="mask hidden"></div>
+
+    <section id="modal" class="modal hidden">
+      <p>
+        こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。
+      </p>
+      <div id="close" class="close">閉じる</div>
+    </section>
+    <!-- modalがopenより上に書くとおかしなことになる。modalの後にmaskを絶対配置にしたからmaskが上に来る。そうなった場合は、z -indexで配置の入れ替えをする。何も書かない時は0になっている。 -->
+
+    <script src="./main.js"></script>
+  </body>
+</html>
