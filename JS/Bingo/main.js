@@ -124,3 +124,4 @@ renderBingo(columns);
   // };
   //   console.log(b);
 }
+//多くなると機能ごとに関数をまとめるといい。

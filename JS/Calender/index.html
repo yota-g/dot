@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Calender</title>
+</head>
+<body>
+  <table>
+    <!--セル書式のものを記載する時に使用-->
+    <thead>
+      <tr>
+        <th id = 'prev'>&laquo;</th>
+        <th id = "title" colspan='5' >2020/05</th> <!--colspanでthの幅を指定。body要素の個数と合わせる時に使用する-->
+        <th id = 'next'>&raquo;</th>
+      </tr>
+      <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sta</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td id="today" colspan="7">Today</td>
+      </tr>
+    </tfoot>
+  </table>
+  <script src="./main.js"></script>
+</body>
+</html>
