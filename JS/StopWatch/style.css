@@ -1,0 +1,43 @@
+body {
+  font-family: 'Courier New', monospace;
+  /* 等幅フォントを設定 */
+  font-size: 14px;
+  background-color: #eee;
+}
+
+.container {
+  margin: 20px auto;
+  width: 270px;
+  background-color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+#timer {
+  background: #ddd;
+  height: 120px;
+  line-height: 120px;
+  /* heightとline-heightを同じ高さにすると縦の中央揃えができる。 */
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.btn{
+  width: 80px;
+  height: 45px;
+  line-height: 45px;
+  background-color: #ddd;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inactive{
+  opacity: 0.6;
+  /*これだとbuttonの表示が無効にに見えるが有効なので、inactiveがついていたら処理をしないようにすること。 */
+}
