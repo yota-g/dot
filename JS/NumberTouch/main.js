@@ -25,7 +25,7 @@
         // currentNum ++ ;
         this.game.addCurrentNum();
         // if (currentNum === 4) {
-        if (this.game.getCurrentNum() === 4) {
+        if (this.game.getCurrentNum() === this.game.getLevel() ** 2 ) {
           clearTimeout(this.game.getTimeoutId());
           // clearTimeout(timeoutId);
         }
@@ -37,7 +37,8 @@
     constructor(game) {
       this.game = game
       this.panels = [];
-      for (let i = 0; i < 4; i++) {
+      // for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < this.game.getLevel()** 2 ;  i++) {
         this.panels.push(new Panel(game));
       }
       this.setup();
@@ -53,7 +54,12 @@
     }
 
     activate() {
-      const nums = [0, 1, 2, 3];
+      const nums = [];
+      // const nums = [0, 1, 2, 3];
+      for ( let i = 0; i < this.game.getLevel() ** 2 ; i++) {
+        nums.push(i);
+      }
+      
       this.panels.forEach((panel) => {
         const num = nums.splice(Math.floor(Math.random() * nums.length), 1)[0];
         //spliceの返り値は配列なので0がいる。
@@ -72,7 +78,8 @@
   // }
 
   class Game {
-    constructor() {
+    constructor(level) {
+      this.level = level;
       this.board = new Board(this);
       this.currentNum = undefined;
       this.startTime = undefined;
@@ -82,6 +89,18 @@
       btn.addEventListener('click', () => {
         this.start();
       });
+      this.setUp();
+    }
+
+    getLevel(){
+      return this.level;
+    }
+
+    setUp() {
+      const container = document.getElementById('container');
+      const PANEL_WIDTH = 50;
+      const BOARD_PADDING= 10;
+      container.style.width = PANEL_WIDTH * this.level  + BOARD_PADDING * 2 + 'px';
     }
 
     start() {
@@ -113,7 +132,7 @@
       return this.timeoutId;
     }
   }
-  new Game();
+  new Game(3);
 
   // const board = new Board();
   // let currentNum;
