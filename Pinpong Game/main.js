@@ -123,9 +123,13 @@
       this.ball = new Ball(this.canvas);
       this.paddle = new Paddle(this.canvas);
       this.loop();
+      this.isGameOver =false;
     }
     //情報を更新して描画するのをゲームループと呼ぶ。
     loop() {
+      if(this.isGameOver){
+        return;
+      }
       this.update();
       this.draw();
 
@@ -139,13 +143,26 @@
     update() {
       this.ball.update();
       this.paddle.update(this.ball);
+      if (this.ball.getMissedStatus()){
+        this.isGameOver = true;
+      }
     }
 
     draw() {
+      if(this.isGameOver){
+        this.drawGameOver();
+        return ;
+      }
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.ball.draw();
       this.paddle.draw();
       // console.log(new Date());
+    }
+
+    drawGameOver() {
+      this.ctx.font ='28px "Arial Black"';
+      this.ctx.fillStyle = 'tomato';
+      this.ctx.fillText('GAME OVER', 50, 150);
     }
   }
 
