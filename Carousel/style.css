@@ -1,0 +1,7 @@
+.container {
+  width: 80%;
+  height: 220px;
+  margin : 16px auto;
+  outline: 8px solid red;
+  /* borderとは違って領域に影響を与えない。他の要素がズレることがない。表示領域を確認するときに便利 */
+}
