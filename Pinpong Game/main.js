@@ -20,6 +20,18 @@
       this.vy = rand(3, 5) * (Math.random() < 0.5 ? 1 : -1);
     }
 
+    getX() {
+      return this.x;
+    }
+
+    getY() {
+      return this.y;
+    }
+
+    getR(){
+      return this.r;
+    }
+
     update() {
       this.x += this.vx;
       this.y += this.vy;
@@ -61,7 +73,23 @@
       });
     }
 
-    update() {
+    update(ball) {
+      const ballBottom = ball.begtY() + ball.getR();
+      const paddleTop = this.y;
+      const ballTop = ball.getY() - -ball.getR();
+      const paddleBottom =this.y + this.h;
+      const ballCenter = ball.getX()
+      ;
+      const paddleLeft = this.x;
+      const paddleRight = this.x + this.w;
+      if(
+        ballBottom > paddleTop && 
+        ballTop < paddleBottom  &&
+        ballCenter > paddleLeft && 
+        ballCenter < paddleRight
+      ){
+
+      }
       const rect = this.canvas.getBoundingClientRect();
       this.x = this.mouseX - rect.left - (this.w / 2);
       // -this.wはpaddleの左端がマウスの座標になるのでパドルの真ん中にマウスの座標がくるようにしている。
