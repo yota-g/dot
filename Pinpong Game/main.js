@@ -42,7 +42,24 @@
       this.ctx.arc(this.x, this.y, this.r, 0 ,2 * Math.PI);
       this.ctx.fill();
     }
+  }
 
+  class Paddle {
+    constructor(canvas) {
+      this.canvas = canvas;
+      this.ctx = canvas.getContext('2d');
+      this.w = 60;
+      this.h = 16;
+      this.x = this.canvas.width /2 - (this.w / 2) ;
+      this.y = this.canvas.height - 32;
+    }
+    update(){
+
+    }
+    draw(){
+      this.ctx.fillStyle = '#fdfdfd';
+      this.ctx.fillRect(this.x , this.y, this.w, this.h);
+    }
   }
 
   class Game {
@@ -50,6 +67,7 @@
       this.canvas = canvas;
       this.ctx = canvas.getContext('2d');  
       this.ball = new Ball(this.canvas);
+      this.paddle = new Paddle (this.canvas);
       this.loop();
     }
     //情報を更新して描画するのをゲームループと呼ぶ。
@@ -66,12 +84,14 @@
 
     update() {
       this.ball.update();
+      this.paddle.update();
     }
 
     draw(){
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.ball.draw();
-      console.log(new Date());
+      this.paddle.draw();
+      // console.log(new Date());
     }
   }
 
