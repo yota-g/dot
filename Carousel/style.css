@@ -2,6 +2,31 @@
   width: 80%;
   height: 220px;
   margin : 16px auto;
-  outline: 8px solid red;
+  /* outline: 8px solid red; */
   /* borderとは違って領域に影響を与えない。他の要素がズレることがない。表示領域を確認するときに便利 */
+  overflow: hidden;
+  /* 枠を超えている画像を非表示にする。 */
+}
+
+ul {
+  list-style: none;
+  margin : 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+}
+
+li {
+  height: 100%;
+  min-width: 100%;
+  /* 要素それぞれの最低幅を指定できる。
+  flex basesを無視して、幅指定できる。 */
+}
+
+li img {
+  width: 100%;
+  height: 100%;
+  /* heightを100にすると親要素の方にも高さを指定する必要がある。 */
+  object-fit: cover;
+  /*  画像の縦横比を保ったまま、領域を埋めるように表示してくれる。 画像が潰れないように表示できる。*/
 }
