@@ -25,6 +25,10 @@ header h1 {
   cursor: pointer;
 }
 
+.sp-menu #open.hide{
+  display: none;
+}
+
 main {
   padding: 0 16px;
 }
@@ -41,6 +45,11 @@ main {
   opacity: 0;
   pointer-events: none;
   /* pointer eventsをnoneとすると下にある要素を選択できなくなっているものを無効化して選択できるようになる。 */
+}
+.overlay.show {
+  opacity: 1;
+  /* pointerイベントを使用できるようにする。overlayのままだと無効になっているから。 */
+  pointer-events: auto;
 }
 
 .overlay #close {

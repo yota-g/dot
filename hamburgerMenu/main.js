@@ -3,11 +3,14 @@
 {
   const open = document.getElementById('open');
   const overlay = document.querySelector('.overlay');
-open.addEventListener('click', ()=>{
-
-});
   const close = document.getElementById('close');
-  document.addEventListenre('click', () => {
+  open.addEventListener('click', () => {
+    document.addEventListener('click', () => {
+      overlay.classList.add('show');
+      open.classList.add('hide');
+    });
+  });
+  close.addEventListener('click', () => {
 
   })
 }
