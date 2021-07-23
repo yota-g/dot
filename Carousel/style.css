@@ -1,7 +1,13 @@
-.container {
+.carousel {
   width: 80%;
+  margin: 16px auto;
+}
+
+.container {
+  /* width: 80%; */
+  width: 100%;
   height: 220px;
-  margin : 16px auto;
+  /* margin : 16px auto; */
   /* outline: 8px solid red; */
   /* borderとは違って領域に影響を与えない。他の要素がズレることがない。表示領域を確認するときに便利 */
   overflow: hidden;
@@ -49,7 +55,6 @@ li img {
   opacity: 0.8;
 }
 
-
 #prev {
   left: 0;
 }
@@ -60,4 +65,27 @@ li img {
 
 .hidden {
   display: none;
+}
+
+nav {
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* navのbuttonに続くbuttonに設定する */
+nav button + button {
+  margin-left: 8px;
+}
+
+nav button{
+  border: none;
+  width: 16px;
+  height: 16px;
+  background: #ddd;
+  border-radius : 50%;
+  cursor: pointer;
+}
+
+nav .current{
+  background: #999;
 }
