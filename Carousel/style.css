@@ -6,6 +6,7 @@
   /* borderとは違って領域に影響を与えない。他の要素がズレることがない。表示領域を確認するときに便利 */
   overflow: hidden;
   /* 枠を超えている画像を非表示にする。 */
+  position: relative;
 }
 
 ul {
@@ -30,3 +31,29 @@ li img {
   object-fit: cover;
   /*  画像の縦横比を保ったまま、領域を埋めるように表示してくれる。 画像が潰れないように表示できる。*/
 }
+#prev , #next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* こうするすることでbuttonの高さの50%を上にあげることができ、中央に配置することができる */
+  border: none;
+  background: rgba(0, 0, 0, .8);
+  color: #fff;
+  font-size: 24px;
+  padding: 0 8px 4px;
+  cursor: pointer;
+}
+
+#prev:hover, #next:hover {
+  opacity: 0.8;
+}
+
+
+#prev {
+  left: 0;
+}
+
+#next {
+  right: 0;
+}
+
