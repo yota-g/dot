@@ -58,3 +58,6 @@ li img {
   right: 0;
 }
 
+.hidden {
+  display: none;
+}
